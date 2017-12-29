@@ -13,6 +13,7 @@ class UserController extends Controller
     {
         // Assumed auth middleware
         $user = Auth::user();
+
         return redirect()->route('user', ['username' => $user->username]);
     }
 
@@ -20,10 +21,8 @@ class UserController extends Controller
     {
         $user = User::getUsername($username);
 
-        if($user->id == Auth::id()) {
-            return "This is me";
-        } else {
-            return "You're looking at " . $username;
-        }
+        $lookingAtSelf = $user->id == Auth::id();
+
+        return view('profile', compact("user", "lookingAtSelf"));
     }
 }

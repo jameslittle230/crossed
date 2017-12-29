@@ -27,6 +27,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function puzzles()
+    {
+        return $this->hasMany('App\Puzzle');
+    }
+
     /**
      * A dynamic eloquent scope. Lets you do things like
      * App\User::getUsername('littleguy23');

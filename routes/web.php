@@ -20,7 +20,7 @@ Route::view('popular', 'popular')->name('popular');
 
 Route::get('puzzle/new', function() {}); /* 1 */
 Route::get('user/{username}', 'UserController@show')->name('user');
-Route::get('puzzle/{slug}', function($username, $slug) {});
+Route::get('puzzle/{slug}', 'PuzzleController@show')->name('puzzle');
 
 Route::middleware('auth')->group(function() {
     Route::get('me', 'UserController@redirectToMe');
