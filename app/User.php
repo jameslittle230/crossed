@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'email', 'password',
     ];
 
     /**
@@ -26,4 +26,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * A dynamic eloquent scope. Lets you do things like
+     * App\User::getUsername('littleguy23');
+     *
+     * Returns only the instance, not the collection (because it's assumed to
+     * be unique)
+     */
+    public function scopeGetUsername($query, $username)
+    {
+        return $query->where('username', $username)->firstOrFail();
+    }
 }

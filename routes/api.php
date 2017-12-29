@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('puzzle/{slug}', function($slug) {});
+Route::post('puzzle/{slug}', function($slug) {});
+Route::get('wordsearch/{word}', function($word) {});
+Route::get('cluesearch/{word}', function($word) {});
+Route::post('cluesearch', function() {});
