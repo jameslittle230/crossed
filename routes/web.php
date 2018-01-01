@@ -23,9 +23,9 @@ Route::get('user/{username}', 'UserController@show')->name('user');
 Route::get('puzzle/{slug}', 'PuzzleController@show')->name('puzzle');
 
 Route::middleware('auth')->group(function() {
-    Route::get('me', 'UserController@redirectToMe');
-    Route::get('dashboard', function() {});
-    Route::get('settings', function() {});
+    Route::get('me', 'UserController@redirectToMe')->name('me');
+    Route::get('dashboard', function() {})->name('dashboard');
+    Route::get('settings', function() {})->name('settings');
 
     // This is pretty hacky -- eventually should be deleted
     Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
