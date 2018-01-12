@@ -11,5 +11,11 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.autoload({ // https://github.com/JeffreyWay/laravel-mix/issues/819#issuecomment-319853468
+        jquery: ['$', 'window.jQuery',"jQuery","window.$","jquery","window.jquery"]
+    })
+   .js('resources/assets/js/app.js', 'public/js')
+   .js('resources/assets/js/main.js', 'public/js')
+   .extract(['vue', 'axios', 'jquery', 'bootstrap-sass'])
+   .sass('resources/assets/sass/app.scss', 'public/css')
+   .browserSync('http://crossedapp.test');

@@ -10,6 +10,7 @@ class PuzzleController extends Controller
     public function show($slug)
     {
         $puzzle = Puzzle::getSlug($slug);
-        return $puzzle;
+
+        return view('puzzle', compact("puzzle"));
     }
 }
