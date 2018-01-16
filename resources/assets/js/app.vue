@@ -1,17 +1,11 @@
 <template>
-	<div id="app">
+	<div id="app" class="ca-wrapper">
 		<top-bar/>
 
-        <div class="puzzle-info-column">
+        <div class="puzzle-info">
             <puzzle-heading/>
-
-            <div class="word-column">
-                <word-column direction="across"/>
-            </div>
-
-            <div class="word-column">
-                <word-column direction="down"/>
-            </div>
+            <word-column direction="across"/>
+            <word-column direction="down"/>
         </div>
 
         <div class="puzzle-visualization">

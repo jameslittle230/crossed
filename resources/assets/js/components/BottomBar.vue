@@ -38,23 +38,19 @@ export default {
 }
 </script>
 
-<style scoped>
-.bottom-bar {
-    height: 42px;
-    padding: 0 12px;
-    background-image: linear-gradient(-180deg, #5F5F5F 0%, #474747 100%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+<style lang="scss">
 
 .bottom-bar__button {
     background: rgba(0,0,0,0.69);
     border-radius: 8px;
-    /* font-family: InterUI-Bold;
-    font-size: 16px; */
     color: #FFFFFF;
     padding: 5px 12px;
     margin-right: 6px;
+    text-decoration: none;
+
+    &:hover {
+        background: rgba(0,0,0,0.93);
+    }
 }
+
 </style>

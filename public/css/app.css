@@ -502,6 +502,79 @@ template {
   display: none;
 }
 
+.ca-wrapper {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 42px auto 42px;
+}
+
+.top-bar {
+  padding: 0 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-image: linear-gradient(-120deg, #66C3EE 0%, #C2FAB8 100%);
+  border-bottom: 2px solid #282828;
+}
+
+.bottom-bar {
+  padding: 0 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#5F5F5F), to(#474747));
+  background-image: linear-gradient(-180deg, #5F5F5F 0%, #474747 100%);
+}
+
+.puzzle-info {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 90px auto;
+}
+
+.puzzle-visualization {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background: orchid;
+}
+
+.puzzle-heading {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background: darkorange;
+}
+
 body {
   font-family: "Inter UI";
 }
