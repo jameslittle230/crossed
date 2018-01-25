@@ -1,6 +1,6 @@
 <template>
     <div class="puzzle-viz">
-        <p>Puzzle visualization</p>
+        <canvas id="puzzle-canvas"></canvas>
     </div>
 </template>
 
