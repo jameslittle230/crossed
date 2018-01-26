@@ -428,7 +428,7 @@ function applyToTag (styleElement, obj) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(17);
-module.exports = __webpack_require__(52);
+module.exports = __webpack_require__(54);
 
 
 /***/ }),
@@ -439,7 +439,7 @@ module.exports = __webpack_require__(52);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_vue__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__App_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_outside_events__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_outside_events__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_outside_events___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_outside_events__);
 window.Vue = __webpack_require__(6);
 
@@ -468,7 +468,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(24)
 /* template */
-var __vue_template__ = __webpack_require__(50)
+var __vue_template__ = __webpack_require__(52)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -589,15 +589,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_TopBar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_TopBar_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_PuzzleHeading_vue__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_PuzzleHeading_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_PuzzleHeading_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_WordColumn_vue__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_WordColumn_vue__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_WordColumn_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_WordColumn_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_PuzzleViz_vue__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_PuzzleViz_vue__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_PuzzleViz_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_PuzzleViz_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_WordSuggestions_vue__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_WordSuggestions_vue__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_WordSuggestions_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_WordSuggestions_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_BottomBar_vue__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_BottomBar_vue__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_BottomBar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_BottomBar_vue__);
-//
 //
 //
 //
@@ -952,13 +951,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(78)
+  __webpack_require__(31)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(31)
+var __vue_script__ = __webpack_require__(33)
 /* template */
-var __vue_template__ = __webpack_require__(80)
+var __vue_template__ = __webpack_require__(34)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -998,10 +997,54 @@ module.exports = Component.exports
 
 /***/ }),
 /* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(32);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("6bffefca", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9bce6d86\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PuzzleHeading.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9bce6d86\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PuzzleHeading.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.puzzle-heading[data-v-9bce6d86] {\n  border-bottom: 2px solid #979797;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 12px;\n}\n.settings-column[data-v-9bce6d86] {\n  -ms-flex-item-align: baseline;\n      align-self: baseline;\n  position: relative;\n  top: 0.4em;\n  margin-right: 0.8rem;\n}\n.title-column[data-v-9bce6d86] {\n  -ms-flex-item-align: start;\n      align-self: flex-start;\n  -webkit-box-flex: 0;\n      -ms-flex: 0 1 auto;\n          flex: 0 1 auto;\n  margin-right: 1em;\n}\n.puzzle-title[data-v-9bce6d86] {\n  font-family: \"Inter UI\";\n  font-weight: 900;\n  font-style: italic;\n  font-size: 36px;\n  color: #000000;\n  width: 90%;\n  border: 1px solid transparent;\n}\n.puzzle-title[data-v-9bce6d86]:hover {\n    border: 1px solid gray;\n}\n.puzzle-title[data-v-9bce6d86]:focus {\n    border: 1px solid blue;\n}\n.template-column[data-v-9bce6d86] {\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n  margin-right: 1rem;\n}\n.input-direction-column[data-v-9bce6d86] {\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n}\n.save-status[data-v-9bce6d86] {\n  font-size: 12px;\n  color: #000000;\n  margin: 0;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ApplyTemplateButton_vue__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ApplyTemplateButton_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ApplyTemplateButton_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__InputDirectionSwitch_vue__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__InputDirectionSwitch_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__InputDirectionSwitch_vue__);
 //
 //
 //
@@ -1025,11 +1068,88 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "puzzleHeading",
     props: ['puzzleName'],
+    components: {
+        applyTemplateButton: __WEBPACK_IMPORTED_MODULE_0__ApplyTemplateButton_vue___default.a, inputDirectionSwitch: __WEBPACK_IMPORTED_MODULE_1__InputDirectionSwitch_vue___default.a
+    },
     data: function data() {
         return {};
     },
@@ -1037,16 +1157,93 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 32 */,
-/* 33 */
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "puzzle-heading" }, [
+    _c("div", { staticClass: "settings-column" }, [
+      _c(
+        "svg",
+        {
+          attrs: {
+            version: "1.1",
+            id: "Cog",
+            xmlns: "http://www.w3.org/2000/svg",
+            "xmlns:xlink": "http://www.w3.org/1999/xlink",
+            x: "0px",
+            y: "0px",
+            width: "31",
+            height: "31",
+            viewBox: "0 0 20 20",
+            "enable-background": "new 0 0 20 20",
+            "xml:space": "preserve"
+          }
+        },
+        [
+          _c("path", {
+            attrs: {
+              d:
+                "M16.783,10c0-1.049,0.646-1.875,1.617-2.443c-0.176-0.584-0.407-1.145-0.692-1.672c-1.089,0.285-1.97-0.141-2.711-0.883\n            c-0.741-0.74-0.968-1.621-0.683-2.711c-0.527-0.285-1.088-0.518-1.672-0.691C12.074,2.57,11.047,3.215,10,3.215\n            c-1.048,0-2.074-0.645-2.643-1.615C6.772,1.773,6.213,2.006,5.686,2.291c0.285,1.09,0.059,1.971-0.684,2.711\n            C4.262,5.744,3.381,6.17,2.291,5.885C2.006,6.412,1.774,6.973,1.6,7.557C2.57,8.125,3.215,8.951,3.215,10\n            c0,1.047-0.645,2.074-1.615,2.643c0.175,0.584,0.406,1.144,0.691,1.672c1.09-0.285,1.971-0.059,2.711,0.682\n            c0.741,0.742,0.969,1.623,0.684,2.711c0.527,0.285,1.087,0.518,1.672,0.693c0.568-0.973,1.595-1.617,2.643-1.617\n            c1.047,0,2.074,0.645,2.643,1.617c0.584-0.176,1.144-0.408,1.672-0.693c-0.285-1.088-0.059-1.969,0.683-2.711\n            c0.741-0.74,1.622-1.166,2.711-0.883c0.285-0.527,0.517-1.086,0.692-1.672C17.429,11.873,16.783,11.047,16.783,10z M10,13.652\n            c-2.018,0-3.653-1.635-3.653-3.652c0-2.018,1.636-3.654,3.653-3.654c2.018,0,3.652,1.637,3.652,3.654\n            C13.652,12.018,12.018,13.652,10,13.652z"
+            }
+          })
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "title-column" }, [
+      _c("input", {
+        staticClass: "puzzle-title",
+        attrs: { type: "text" },
+        domProps: { value: _vm.puzzleName },
+        on: {
+          blur: function($event) {
+            _vm.$emit("update:puzzleName", $event.target.value)
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("p", { staticClass: "save-status" }, [_vm._v("All data saved.")])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "template-column" },
+      [_c("apply-template-button")],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "input-direction-column" },
+      [_c("input-direction-switch")],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-9bce6d86", module.exports)
+  }
+}
+
+/***/ }),
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(34)
+var __vue_script__ = __webpack_require__(36)
 /* template */
-var __vue_template__ = __webpack_require__(38)
+var __vue_template__ = __webpack_require__(40)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1085,12 +1282,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Word_vue__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Word_vue__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Word_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Word_vue__);
 //
 //
@@ -1144,15 +1341,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 35 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(36)
+var __vue_script__ = __webpack_require__(38)
 /* template */
-var __vue_template__ = __webpack_require__(37)
+var __vue_template__ = __webpack_require__(39)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1191,7 +1388,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 36 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1223,7 +1420,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 37 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1249,7 +1446,7 @@ if (false) {
 }
 
 /***/ }),
-/* 38 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1283,15 +1480,15 @@ if (false) {
 }
 
 /***/ }),
-/* 39 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(40)
+var __vue_script__ = __webpack_require__(42)
 /* template */
-var __vue_template__ = __webpack_require__(41)
+var __vue_template__ = __webpack_require__(43)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1330,7 +1527,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 40 */
+/* 42 */
 /***/ (function(module, exports) {
 
 //
@@ -1341,7 +1538,7 @@ module.exports = Component.exports
 //
 
 /***/ }),
-/* 41 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1370,15 +1567,15 @@ if (false) {
 }
 
 /***/ }),
-/* 42 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(43)
+var __vue_script__ = __webpack_require__(45)
 /* template */
-var __vue_template__ = __webpack_require__(44)
+var __vue_template__ = __webpack_require__(46)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1417,7 +1614,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 43 */
+/* 45 */
 /***/ (function(module, exports) {
 
 //
@@ -1428,7 +1625,7 @@ module.exports = Component.exports
 //
 
 /***/ }),
-/* 44 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1457,19 +1654,19 @@ if (false) {
 }
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(46)
+  __webpack_require__(48)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(48)
+var __vue_script__ = __webpack_require__(50)
 /* template */
-var __vue_template__ = __webpack_require__(49)
+var __vue_template__ = __webpack_require__(51)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1508,13 +1705,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 46 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(47);
+var content = __webpack_require__(49);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1534,7 +1731,7 @@ if(false) {
 }
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -1548,7 +1745,7 @@ exports.push([module.i, "\n.bottom-bar__button {\n  background: rgba(0, 0, 0, 0.
 
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1581,7 +1778,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1662,7 +1859,7 @@ if (false) {
 }
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1690,8 +1887,7 @@ var render = function() {
           _vm._v(" "),
           _c("word-column", { attrs: { direction: "across" } }),
           _vm._v(" "),
-          _c("word-column", { attrs: { direction: "down" } }),
-          _vm._v("\n            " + _vm._s(_vm.ca_puzzle_name) + "\n        ")
+          _c("word-column", { attrs: { direction: "down" } })
         ],
         1
       ),
@@ -1719,7 +1915,7 @@ if (false) {
 }
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_$, __webpack_provided_window_dot_jQuery, jQuery) {/**
@@ -1735,14 +1931,12 @@ if (false) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(2), __webpack_require__(2)))
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 53 */,
-/* 54 */,
 /* 55 */,
 /* 56 */,
 /* 57 */,
@@ -1766,23 +1960,209 @@ if (false) {
 /* 75 */,
 /* 76 */,
 /* 77 */,
-/* 78 */
+/* 78 */,
+/* 79 */,
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(90)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(83)
+/* template */
+var __vue_template__ = __webpack_require__(92)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-6a9b78f3"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/ApplyTemplateButton.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6a9b78f3", Component.options)
+  } else {
+    hotAPI.reload("data-v-6a9b78f3", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 81 */,
+/* 82 */,
+/* 83 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'applyTemplateButton'
+});
+
+/***/ }),
+/* 84 */,
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(93)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(88)
+/* template */
+var __vue_template__ = __webpack_require__(95)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-45e988a0"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/InputDirectionSwitch.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-45e988a0", Component.options)
+  } else {
+    hotAPI.reload("data-v-45e988a0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 86 */,
+/* 87 */,
+/* 88 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'inputDirectionSwitch',
+    data: function data() {
+        return {
+            inputDirection: "across"
+        };
+    },
+    methods: {
+        switchDirection: function switchDirection() {
+            this.inputDirection = this.inputDirection == "across" ? "down" : "across";
+        }
+    }
+});
+
+/***/ }),
+/* 89 */,
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(79);
+var content = __webpack_require__(91);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("6bffefca", content, false);
+var update = __webpack_require__(4)("816acba0", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9bce6d86\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PuzzleHeading.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9bce6d86\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PuzzleHeading.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6a9b78f3\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ApplyTemplateButton.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6a9b78f3\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ApplyTemplateButton.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -1792,7 +2172,7 @@ if(false) {
 }
 
 /***/ }),
-/* 79 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -1800,33 +2180,118 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\n.puzzle-heading[data-v-9bce6d86] {\n  border-bottom: 2px solid #979797;\n}\n", ""]);
+exports.push([module.i, "\n.apply-template-button[data-v-6a9b78f3] {\n  text-align: center;\n}\n.apply-template-button[data-v-6a9b78f3]:hover {\n    cursor: pointer;\n}\n.apply-template-button:hover svg[data-v-6a9b78f3] {\n      -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);\n              box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 80 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "puzzle-heading" }, [
-    _c("div", { staticClass: "settings-column" }),
-    _vm._v(" "),
-    _c("div", { staticClass: "title-column" }, [
-      _c("input", {
-        staticClass: "puzzle-title",
-        attrs: { type: "text" },
-        domProps: { value: _vm.puzzleName },
-        on: {
-          blur: function($event) {
-            _vm.$emit("update:puzzleName", $event.target.value)
-          }
+  return _c("div", { staticClass: "apply-template-button" }, [
+    _c(
+      "svg",
+      {
+        attrs: {
+          width: "36px",
+          height: "36px",
+          viewBox: "0 0 36 36",
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink"
         }
-      })
+      },
+      [
+        _c(
+          "g",
+          {
+            attrs: {
+              id: "Page-1",
+              stroke: "none",
+              "stroke-width": "1",
+              fill: "none",
+              "fill-rule": "evenodd"
+            }
+          },
+          [
+            _c(
+              "g",
+              {
+                attrs: {
+                  id: "Desktop-HD",
+                  transform: "translate(-570.000000, -62.000000)"
+                }
+              },
+              [
+                _c(
+                  "g",
+                  {
+                    attrs: {
+                      id: "Puzzle-Heading",
+                      transform: "translate(21.000000, 56.000000)"
+                    }
+                  },
+                  [
+                    _c(
+                      "g",
+                      {
+                        attrs: {
+                          id: "Template-Button",
+                          transform: "translate(549.000000, 6.000000)"
+                        }
+                      },
+                      [
+                        _c("rect", {
+                          attrs: {
+                            id: "Rectangle-4",
+                            stroke: "#525252",
+                            "stroke-width": "2",
+                            x: "1",
+                            y: "1",
+                            width: "34",
+                            height: "34"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("rect", {
+                          attrs: {
+                            id: "Rectangle-4-Copy",
+                            fill: "#000000",
+                            x: "0",
+                            y: "0",
+                            width: "18",
+                            height: "18"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("rect", {
+                          attrs: {
+                            id: "Rectangle-4-Copy-2",
+                            fill: "#000000",
+                            x: "18",
+                            y: "18",
+                            width: "18",
+                            height: "18"
+                          }
+                        })
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
+          ]
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _c("p", { staticClass: "puzzle-heading-control-text" }, [
+      _vm._v("Apply Template")
     ])
   ])
 }
@@ -1836,7 +2301,197 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-9bce6d86", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6a9b78f3", module.exports)
+  }
+}
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(94);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("53b65d82", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-45e988a0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./InputDirectionSwitch.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-45e988a0\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./InputDirectionSwitch.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.input-direction-switch[data-v-45e988a0] {\n  text-align: center;\n}\n.input-direction-switch:hover #arrow path[data-v-45e988a0] {\n    stroke: black;\n}\nsvg *[data-v-45e988a0] {\n  -webkit-transition: 0.4s ease all;\n  transition: 0.4s ease all;\n}\n#arrow[data-v-45e988a0] {\n  -webkit-transform-origin: 16.8px 16.8px;\n          transform-origin: 16.8px 16.8px;\n}\n#arrow path[data-v-45e988a0] {\n    -webkit-transition-duration: 0ms;\n            transition-duration: 0ms;\n}\n.switch-across #arrow[data-v-45e988a0] {\n  -webkit-transform: translateX(37.5px) rotate(-90deg);\n          transform: translateX(37.5px) rotate(-90deg);\n}\n.switch-across #Oval[data-v-45e988a0] {\n  -webkit-transform: translateX(37px);\n          transform: translateX(37px);\n}\n.switch-across #Rectangle-3[data-v-45e988a0] {\n  fill: green;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "input-direction-switch",
+      class: { "switch-across": _vm.inputDirection == "across" },
+      on: { click: _vm.switchDirection }
+    },
+    [
+      _c(
+        "svg",
+        {
+          attrs: {
+            width: "72px",
+            height: "34px",
+            viewBox: "0 0 72 34",
+            version: "1.1",
+            xmlns: "http://www.w3.org/2000/svg",
+            "xmlns:xlink": "http://www.w3.org/1999/xlink"
+          }
+        },
+        [
+          _c(
+            "g",
+            {
+              attrs: {
+                id: "Page-1",
+                stroke: "none",
+                "stroke-width": "1",
+                fill: "none",
+                "fill-rule": "evenodd"
+              }
+            },
+            [
+              _c(
+                "g",
+                {
+                  attrs: {
+                    id: "Desktop-HD",
+                    transform: "translate(-662.000000, -63.000000)"
+                  }
+                },
+                [
+                  _c(
+                    "g",
+                    {
+                      attrs: {
+                        id: "Puzzle-Heading",
+                        transform: "translate(21.000000, 56.000000)"
+                      }
+                    },
+                    [
+                      _c(
+                        "g",
+                        {
+                          attrs: {
+                            id: "Input-Dir-Toggle",
+                            transform: "translate(641.000000, 7.000000)"
+                          }
+                        },
+                        [
+                          _c("rect", {
+                            attrs: {
+                              id: "Rectangle-3",
+                              fill: "#68A6EF",
+                              x: "0",
+                              y: "0",
+                              width: "72",
+                              height: "34",
+                              rx: "18"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("circle", {
+                            attrs: {
+                              id: "Oval",
+                              fill: "#F8F8F8",
+                              cx: "17.5",
+                              cy: "17.5",
+                              r: "14.5"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("g", { attrs: { id: "arrow" } }, [
+                            _c("path", {
+                              attrs: {
+                                d: "M17,7.28333333 L17,23.7166667",
+                                id: "Line-3",
+                                stroke: "#737373",
+                                "stroke-width": "4",
+                                "stroke-linecap": "square"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("path", {
+                              attrs: {
+                                d:
+                                  "M11.2727273,20.2727273 L16.7272727,25.7552264",
+                                id: "Line-3",
+                                stroke: "#737373",
+                                "stroke-width": "4",
+                                "stroke-linecap": "square"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("path", {
+                              attrs: {
+                                d:
+                                  "M22.7412674,20.2866862 L17.2727273,25.7552264",
+                                id: "Line-3",
+                                stroke: "#737373",
+                                "stroke-width": "4",
+                                "stroke-linecap": "square"
+                              }
+                            })
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ]
+              )
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("p", { staticClass: "puzzle-heading-control-text" }, [
+        _vm._v("Input Direction")
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-45e988a0", module.exports)
   }
 }
 
