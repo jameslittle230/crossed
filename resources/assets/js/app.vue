@@ -5,9 +5,12 @@
         />
 
         <div class="puzzle-info">
-            <puzzle-heading/>
+            <puzzle-heading
+                :puzzleName.sync="ca_puzzle_name"
+            />
             <word-column direction="across"/>
             <word-column direction="down"/>
+            {{ ca_puzzle_name }}
         </div>
 
         <div class="puzzle-visualization">
