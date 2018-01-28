@@ -631,6 +631,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -640,41 +643,48 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var _data = {
-	ca_puzzle_name: "Zigs and Zags",
+				ca_puzzle_name: "Zigs and Zags",
+				ca_input_direction: "across",
 
-	ca_selected_index: 0,
-	ca_letter_input: "",
-	ca_input_direction: "across",
+				ca_user: {
+								name: "James Little",
+								username: "james"
+				},
 
-	ca_user: {
-		name: "James Little",
-		username: "james"
-	},
-
-	ca_board: {
-		dimension: 15,
-		spaces: [],
-		words: []
-	}
+				ca_board: {
+								size: 15,
+								values: ["I", "C", "A", "R", "U", "S", " ", "F", "R", "E", "E", " ", "F", "A", "N", "T", "H", "R", "U", "S", "T", " ", "R", "A", "D", "S", " ", "A", "D", "O", "S", "I", "M", "M", "E", "R", " ", "O", "D", "C", "T", "O", "J", "O", "E", "O", "L", "Y", " ", "S", "A", "N", "D", "A", "N", "D", "M", "E", "R", "O", "P", "I", "M", "A", " ", "I", "N", "O", "R", " ", " ", "S", "T", "E", "M", "E", "D", "U", "C", "A", "T", "E", " ", "G", "I", "G", " ", "A", "D", "A", "N", "O", "L", "T", "E", " ", " ", "R", "U", "N", "I", "N", " ", " ", " ", " ", "G", "E", "O", "R", "G", "E", "A", "N", "D", "J", "O", "A", "N", " ", " ", " ", " ", "R", "I", "T", "A", "S", " ", " ", "O", "U", "T", "E", "R", "O", "P", "P", " ", "E", "O", "S", " ", "O", "P", "E", "N", "T", "O", "E", "R", "O", "O", "T", " ", " ", "E", "A", "C", "H", " ", "S", "A", "P", "S", "B", "U", "S", "H", "A", "N", "D", "B", "A", "E", "Z", " ", "C", "R", "O", "I", "N", "E", "E", "D", "Y", "O", "U", " ", "N", "E", "T", "H", "E", "R", "T", "C", "U", " ", "D", "E", "F", "T", " ", "O", "R", "I", "E", "N", "T", "S", "E", "R", " ", "A", "R", "E", "S", " ", "M", "O", "S", "S", "E", "S"],
+								blacks: [6, 11, 21, 26, 36, 48, 64, 69, 70, 82, 86, 95, 96],
+								words: []
+				}
 };
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	components: {
-		TopBar: __WEBPACK_IMPORTED_MODULE_0__components_TopBar_vue___default.a, PuzzleHeading: __WEBPACK_IMPORTED_MODULE_1__components_PuzzleHeading_vue___default.a, WordColumn: __WEBPACK_IMPORTED_MODULE_2__components_WordColumn_vue___default.a, PuzzleViz: __WEBPACK_IMPORTED_MODULE_3__components_PuzzleViz_vue___default.a,
-		WordSuggestions: __WEBPACK_IMPORTED_MODULE_4__components_WordSuggestions_vue___default.a, BottomBar: __WEBPACK_IMPORTED_MODULE_5__components_BottomBar_vue___default.a
-	},
+				components: {
+								TopBar: __WEBPACK_IMPORTED_MODULE_0__components_TopBar_vue___default.a, PuzzleHeading: __WEBPACK_IMPORTED_MODULE_1__components_PuzzleHeading_vue___default.a, WordColumn: __WEBPACK_IMPORTED_MODULE_2__components_WordColumn_vue___default.a, PuzzleViz: __WEBPACK_IMPORTED_MODULE_3__components_PuzzleViz_vue___default.a,
+								WordSuggestions: __WEBPACK_IMPORTED_MODULE_4__components_WordSuggestions_vue___default.a, BottomBar: __WEBPACK_IMPORTED_MODULE_5__components_BottomBar_vue___default.a
+				},
 
-	data: function data() {
-		return _data;
-	},
+				data: function data() {
+								return _data;
+				},
 
-	created: function created() {
-		var _this = this;
+				created: function created() {
+								var _this = this;
 
-		this.$bus.$on('switchInputDirection', function ($event) {
-			_this.ca_input_direction = _this.ca_input_direction == "across" ? "down" : "across";
-		});
-	}
+								this.$bus.$on('switchInputDirection', function ($event) {
+												_this.ca_input_direction = _this.ca_input_direction == "across" ? "down" : "across";
+								});
+				},
+
+
+				ready: function ready() {
+								window.addEventListener('resize', this.$bus.$emit('resizeCanvas'));
+				},
+
+				beforeDestroy: function beforeDestroy() {
+								window.removeEventListener('resize', this.$bus.$emit('resizeCanvas'));
+				}
 });
 
 /***/ }),
@@ -1560,8 +1570,10 @@ module.exports = Component.exports
 
 /***/ }),
 /* 42 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -1573,32 +1585,101 @@ module.exports = Component.exports
 //
 
 
-document.addEventListener("DOMContentLoaded", function (event) {
-    var canvas = document.getElementById('puzzle-canvas');
-    canvas.height = canvas.width;
-});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: "puzzleViz",
+    props: ['board', 'inputDirection'],
+    data: function data() {
+        return {
+            selectedIndex: 3
+        };
+    },
+    methods: {
+        updateCanvas: function updateCanvas() {
+            var canvas = document.getElementById("puzzle-canvas");
+            var ctx = canvas.getContext("2d");
+            var board = this.board;
+            var ctxwidth = 1200; // width of canvas in points
 
-(function () {
-    window.addEventListener("resize", resizeThrottler, false);
+            var dim_to_fonts = {
+                5: 144,
+                14: 52,
+                15: 48,
+                16: 44
+            };
 
-    var resizeTimeout;
-    function resizeThrottler() {
-        // ignore resize events as long as an actualResizeHandler execution is in the queue
-        if (!resizeTimeout) {
-            resizeTimeout = setTimeout(function () {
-                resizeTimeout = null;
-                actualResizeHandler();
+            canvas.width = ctxwidth;
+            canvas.height = ctxwidth;
 
-                // The actualResizeHandler will execute at a rate of 15fps
-            }, 66);
+            ctx.clearRect(0, 0, ctxwidth, ctxwidth);
+            ctx.fillStyle = "black";
+            ctx.font = "48px sans-serif";
+
+            var dim = board.size;
+
+            var spaceSize = ctxwidth / dim;
+
+            for (var i = 0; i < board.values.length; i++) {
+                var space = board.values[i];
+                var xpos = Math.round(i % dim * spaceSize);
+                var ypos = Math.round(Math.floor(i / dim) * spaceSize);
+
+                if (board.blacks.includes(i)) {
+                    ctx.fillRect(xpos, ypos, spaceSize, spaceSize);
+                }
+
+                if (i == this.selectedIndex) {
+                    ctx.fillStyle = "#65c6d7";
+                    ctx.fillRect(xpos, ypos, spaceSize, spaceSize);
+
+                    ctx.fillStyle = "black";
+                    if (board.blacks.includes(i)) {
+                        ctx.fillRect(xpos + 3, ypos + 3, spaceSize - 6, spaceSize - 6);
+                    }
+                }
+
+                if (space.isSpecial == true && !space.isBlackSpace) {
+                    ctx.beginPath();
+                    if (!space.isWordStart) {
+                        ctx.arc(xpos + spaceSize / 2, ypos + spaceSize / 2, spaceSize / 2, 0, 2 * Math.PI, false);
+                    } else {
+                        ctx.arc(xpos + spaceSize / 2, ypos + spaceSize / 2, spaceSize / 2, Math.PI / 2 * 3, Math.PI, false);
+                    }
+                    ctx.stroke();
+                }
+
+                if (space.isWordStart == true) {
+                    ctx.font = "12px sans-serif";
+                    ctx.fillText(space.wordStartIndex, xpos + 2, ypos + 12, spaceSize);
+                    ctx.font = "48px sans-serif";
+                }
+
+                ctx.strokeRect(xpos, ypos, spaceSize, spaceSize);
+                ctx.fillText(space.toUpperCase(), xpos + spaceSize / 3, ypos + spaceSize / 4 * 3, spaceSize);
+            }
+        },
+
+        resizeCanvas: function resizeCanvas() {
+            var canvas = document.getElementById('puzzle-canvas');
+            canvas.height = canvas.width;
+            this.updateCanvas();
         }
-    }
+    },
+    mounted: function mounted() {
+        this.resizeCanvas();
+    },
+    created: function created() {
+        var _this = this;
 
-    function actualResizeHandler() {
-        var canvas = document.getElementById('puzzle-canvas');
-        canvas.height = canvas.width;
+        this.$bus.$on('updateCanvas', function ($event) {
+            console.log("Canvas updated");
+            _this.updateCanvas();
+        });
+
+        this.$bus.$on('resizeCanvas', function ($event) {
+            _this.resizeCanvas();
+        });
     }
-})();
+});
 
 /***/ }),
 /* 43 */,
@@ -1936,7 +2017,24 @@ var render = function() {
       _c(
         "div",
         { staticClass: "puzzle-visualization" },
-        [_c("puzzle-viz"), _vm._v(" "), _c("word-suggestions")],
+        [
+          _c("puzzle-viz", {
+            attrs: {
+              board: _vm.ca_board,
+              inputDirection: _vm.ca_input_direction
+            },
+            on: {
+              "update:board": function($event) {
+                _vm.ca_board = $event
+              },
+              "update:inputDirection": function($event) {
+                _vm.ca_input_direction = $event
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("word-suggestions")
+        ],
         1
       ),
       _vm._v(" "),
