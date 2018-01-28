@@ -52,17 +52,17 @@
 
 .title-column {
     align-self: flex-start;
-    flex: 0 1 auto;
     margin-right: 1em;
+    flex: 1 1 auto;
 }
 
 .puzzle-title {
     font-family: "Inter UI"; // override input styles
     font-weight: 900;
+    width: 100%; // gets the input to fit .title-column, its container. Makes working with flexbox a lot easier.
     font-style: italic;
     font-size: 36px;
     color: #000000;
-    width: 90%;
     border: 1px solid transparent;
 
     &:hover {

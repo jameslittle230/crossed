@@ -4,7 +4,7 @@
     height: 100vh;
     overflow: hidden;
 
-    grid-template-columns: 50% 50%;
+    grid-template-columns: minmax(50%, calc(100vw - (100vh - 250px))) minmax(auto, calc(100vh - 250px)); // I have no idea what's going on here but it seems to work well so don't touch it
     grid-template-rows: 42px auto 42px;
 }
 

@@ -2,6 +2,10 @@
 @import "mixins.scss";
 @import "layout.scss";
 
+html {
+    overflow: hidden;
+}
+
 body {
     font-family: "Inter UI";
 }
