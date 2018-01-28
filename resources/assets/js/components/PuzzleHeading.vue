@@ -29,7 +29,7 @@
         </div>
 
         <div class="input-direction-column">
-            <input-direction-switch/>
+            <input-direction-switch :direction.sync="inputDirection"/>
         </div>
     </div>
 </template>
@@ -99,7 +99,7 @@ import inputDirectionSwitch from './InputDirectionSwitch.vue'
 
 export default {
     name: "puzzleHeading",
-    props: ['puzzleName'],
+    props: ['puzzleName', 'inputDirection'],
     components: {
         applyTemplateButton, inputDirectionSwitch
     },

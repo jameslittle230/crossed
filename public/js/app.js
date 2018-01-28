@@ -447,10 +447,20 @@ window.Vue = __webpack_require__(6);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_outside_events___default.a);
 
+var EventBus = new Vue();
+
+Object.defineProperties(Vue.prototype, {
+  $bus: {
+    get: function get() {
+      return EventBus;
+    }
+  }
+});
+
 var app = new Vue({
-    el: '#app',
-    template: '<App/>',
-    components: { App: __WEBPACK_IMPORTED_MODULE_0__App_vue___default.a }
+  el: '#app',
+  template: '<App/>',
+  components: { App: __WEBPACK_IMPORTED_MODULE_0__App_vue___default.a }
 });
 
 /***/ }),

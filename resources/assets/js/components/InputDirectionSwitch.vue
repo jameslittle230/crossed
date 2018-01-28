@@ -1,5 +1,5 @@
 <template>
-    <div class="input-direction-switch" :class="{ 'switch-across': inputDirection == 'across' }" @click="switchDirection">
+    <div class="input-direction-switch" :class="{ 'switch-across': direction == 'across' }" @mousedown="$bus.$emit('switchInputDirection')">
         <svg width="72px" height="34px" viewBox="0 0 72 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <g id="Desktop-HD" transform="translate(-662.000000, -63.000000)">
@@ -25,16 +25,7 @@
 <script>
 export default {
     name: 'inputDirectionSwitch',
-    data: function() {
-        return {
-            inputDirection: "across"
-        }
-    },
-    methods: {
-        switchDirection: function() {
-            this.inputDirection = this.inputDirection == "across" ? "down" : "across"
-        }
-    }
+    props: ['direction'],
 }
 </script>
 
@@ -42,6 +33,7 @@ export default {
 
 .input-direction-switch {
     text-align: center;
+    cursor: pointer;
 
     &:hover {
         #arrow path {
@@ -72,7 +64,7 @@ svg * {
     }
 
     #Rectangle-3 {
-        fill: green;
+        fill: #259843;
     }
 }
 

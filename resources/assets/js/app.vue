@@ -7,6 +7,7 @@
         <div class="puzzle-info">
             <puzzle-heading
                 :puzzleName.sync="ca_puzzle_name"
+                :inputDirection.sync="ca_input_direction"
             />
             <word-column direction="across"/>
             <word-column direction="down"/>
@@ -34,7 +35,7 @@ let data = {
 
 	ca_selected_index: 0,
 	ca_letter_input: "",
-	ca_insert_direction: "right",
+	ca_input_direction: "across",
 
 	ca_user: {
 		name: "James Little",
@@ -56,6 +57,12 @@ export default {
 
     data: function() {
         return data
+    },
+
+    created () {
+        this.$bus.$on('switchInputDirection', ($event) => {
+            this.ca_input_direction = this.ca_input_direction == "across" ? "down" : "across"
+        })
     }
 }
 </script>
