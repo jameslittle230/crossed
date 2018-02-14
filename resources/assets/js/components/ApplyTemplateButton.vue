@@ -36,6 +36,12 @@ export default {
             box-shadow: 0 0 4px rgba($color: #000000, $alpha: 0.7);
         }
     }
+
+    &:active {
+        svg {
+            box-shadow: none;
+        }
+    }
 }
 
 </style>

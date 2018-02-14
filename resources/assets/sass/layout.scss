@@ -37,6 +37,7 @@
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 90px auto;
+    overflow-y: hidden;
 }
 
 .puzzle-visualization {
@@ -55,8 +56,10 @@
     grid-row-end: 2;
 }
 
-// .word-column {
-//     // columns are implied :)
-//     grid-row-start: 1;
-//     grid-row-end: 2;
-// }
+.word-column {
+    // columns are implied :)
+    grid-row-start: 2;
+    grid-row-end: 3;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

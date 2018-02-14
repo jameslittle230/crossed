@@ -4,7 +4,7 @@
         <div class="app-name">crossed.io</div>
 
         <div class="user-dropdown-trigger"
-            v-on:click="userDropdownVisible = !userDropdownVisible"
+            v-on:mousedown="userDropdownVisible = !userDropdownVisible"
             v-bind:class="{ 'dropdown-active': userDropdownVisible }"
         >{{ user.username }}
 
@@ -19,7 +19,7 @@
 
         <div class="user-dropdown"
             v-if="userDropdownVisible"
-            v-click-outside="hideUserDropdown"
+            v-mousedown-outside="hideUserDropdown"
         >
             <li><a href="#">{{ user.name }}</a></li>
             <li><a href="#">Something else</a></li>

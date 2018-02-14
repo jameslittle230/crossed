@@ -26,3 +26,12 @@ export default {
 }
 
 </script>
+
+<style lang="scss" scoped>
+
+.word {
+    padding: 8px;
+    border-bottom: 1px dotted gray;
+}
+
+</style>
