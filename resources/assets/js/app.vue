@@ -107,6 +107,14 @@ export default {
                 return index < board.size;
             }
 
+            function endOfRow(index) {
+                return index % board.size === board.size - 1;
+            }
+
+            function endOfCol(index) {
+                return index > board.size * (board.size - 1);
+            }
+
             function previousInRowIsBlack(index) {
                 return board.blacks.includes(index - 1);
             }
@@ -116,7 +124,31 @@ export default {
             }
 
             function getValue(index, direction) {
-                return "A_B_C";
+                var output = [];
+                var runner = index;
+                while(output.length < 40) { // safeguard against infinite loops
+                    console.log(endOfCol(index));
+                    if(board.blacks.includes(runner) || endOfCol(runner) || endOfRow(runner)) {
+                        return output.join('');
+                    }
+
+                    if (board.values[runner] === "" | board.values[runner] === " ") {
+                        output.push('_');
+                    } else {
+                        output.push(board.values[runner]);
+                    }
+
+                    switch(direction) {
+                        case "across":
+                            runner++;
+                            break;
+                        case "down":
+                            runner += board.size;
+                            break;
+                    }
+                }
+
+                return output.join('');
             }
 
             /**

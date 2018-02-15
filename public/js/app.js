@@ -694,6 +694,14 @@ var _data = {
                 return index < board.size;
             }
 
+            function endOfRow(index) {
+                return index % board.size === board.size - 1;
+            }
+
+            function endOfCol(index) {
+                return index > board.size * (board.size - 1);
+            }
+
             function previousInRowIsBlack(index) {
                 return board.blacks.includes(index - 1);
             }
@@ -703,7 +711,32 @@ var _data = {
             }
 
             function getValue(index, direction) {
-                return "A_B_C";
+                var output = [];
+                var runner = index;
+                while (output.length < 40) {
+                    // safeguard against infinite loops
+                    console.log(endOfCol(index));
+                    if (board.blacks.includes(runner) || endOfCol(runner) || endOfRow(runner)) {
+                        return output.join('');
+                    }
+
+                    if (board.values[runner] === "" | board.values[runner] === " ") {
+                        output.push('_');
+                    } else {
+                        output.push(board.values[runner]);
+                    }
+
+                    switch (direction) {
+                        case "across":
+                            runner++;
+                            break;
+                        case "down":
+                            runner += board.size;
+                            break;
+                    }
+                }
+
+                return output.join('');
             }
 
             /**
@@ -2057,6 +2090,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2861,7 +2900,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\n.word[data-v-29b05a7e] {\n  padding: 8px;\n  border-bottom: 1px dotted gray;\n}\n", ""]);
+exports.push([module.i, "\n.word[data-v-29b05a7e] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 8px;\n  border-bottom: 1px dotted gray;\n}\n.word-number[data-v-29b05a7e] {\n  font-weight: 900;\n  width: 40px;\n  margin-right: 18px;\n  font-size: 36px;\n  text-align: center;\n  letter-spacing: -0.2%;\n}\n.word-value[data-v-29b05a7e] {\n  font-weight: 700;\n  font-size: 20px;\n  color: #000000;\n  margin-bottom: 0.3em;\n}\n.word-clue[data-v-29b05a7e] {\n  font-family: \"Inter UI\";\n  width: 100%;\n  color: #333;\n  border: 1px solid transparent;\n}\n.word-clue[data-v-29b05a7e]:hover {\n    border: 1px solid gray;\n}\n.word-clue[data-v-29b05a7e]:focus {\n    border: 1px solid black;\n}\n", ""]);
 
 // exports
 
@@ -2877,9 +2916,20 @@ var render = function() {
   return _c("div", { staticClass: "word" }, [
     _c("div", { staticClass: "word-number" }, [_vm._v(_vm._s(_vm.number))]),
     _vm._v(" "),
-    _c("div", { staticClass: "word-value" }, [_vm._v(_vm._s(_vm.value))]),
-    _vm._v(" "),
-    _c("div", { staticClass: "word-clue" }, [_vm._v(_vm._s(_vm.clue))])
+    _c("div", [
+      _c("div", { staticClass: "word-value" }, [_vm._v(_vm._s(_vm.value))]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "word-clue",
+        attrs: { type: "text", placeholder: "No clue yet" },
+        domProps: { value: _vm.clue },
+        on: {
+          blur: function($event) {
+            _vm.$emit("update:clue", $event.target.value)
+          }
+        }
+      })
+    ])
   ])
 }
 var staticRenderFns = []
