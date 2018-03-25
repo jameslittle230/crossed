@@ -125,18 +125,28 @@ export default {
                 return board.blacks.includes(index - board.size);
             }
 
+            function endOfWord(index, direction) {
+                return (board.blacks.includes(index) || (
+                    direction === "across" && endOfRow(index)
+                ) || (
+                    direction === "down" && endOfCol(index)
+                ));
+            }
+
             function getValue(index, direction) {
                 var output = [];
                 var runner = index;
                 while(output.length < 40) { // safeguard against infinite loops
-                    if(board.blacks.includes(runner) || endOfCol(runner) || endOfRow(runner)) {
-                        return output.join('');
+                    if(!board.blacks.includes(runner)) {
+                        if (board.values[runner] === "" | board.values[runner] === " ") {
+                            output.push('_');
+                        } else {
+                            output.push(board.values[runner]);
+                        }
                     }
 
-                    if (board.values[runner] === "" | board.values[runner] === " ") {
-                        output.push('_');
-                    } else {
-                        output.push(board.values[runner]);
+                    if(endOfWord(runner, direction)) {
+                        return output.join('');
                     }
 
                     switch(direction) {
