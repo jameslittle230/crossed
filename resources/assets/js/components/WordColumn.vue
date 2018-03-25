@@ -4,7 +4,9 @@
 
         <word
             v-for="word of words" :key="word.id"
+            :id="word.id"
             :number="word.number"
+            :direction="direction"
             :value="word.value"
             :clue="word.clue"
         />

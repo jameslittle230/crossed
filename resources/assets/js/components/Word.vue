@@ -1,13 +1,13 @@
 <template>
     <div class="word">
         <div class="word-number">{{ number }}</div>
-        <div>
-            <div class="word-value">{{ value }}</div>
+        <div style="width: 100%">
+            <div class="word-value">{{ value }} ({{ id }})</div>
             <!-- <div class="word-clue">{{ clue }}</div> -->
 
             <input type="text" class="word-clue" placeholder="No clue yet" 
             v-bind:value="clue"
-            @blur="$emit('update:clue', $event.target.value)"/>
+            @blur="$bus.$emit('updateClue', id, direction, $event.target.value)"/>
         </div>
     </div>
 </template>
@@ -16,10 +16,10 @@
 
 export default {
     name: "Word",
-    props: ['number', 'value', 'clue'],
+    props: ['id', 'direction', 'number', 'value', 'clue'],
     data () {
         return {
-            
+
         }
     },
     methods: {

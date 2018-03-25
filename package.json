@@ -21,6 +21,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "npm": "^5.8.0",
         "vue-outside-events": "^1.1.0"
     }
 }

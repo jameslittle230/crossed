@@ -2,6 +2,11 @@
     <div class="puzzle-viz">
         <input type="text" class="hidden-input" id="hiddenInput" autofocus
              @keydown.tab.stop.prevent="$bus.$emit('switchInputDirection')"
+             @keydown.up.stop.prevent="$bus.$emit('moveSelectedSpace', 'up')"
+             @keydown.down.stop.prevent="$bus.$emit('moveSelectedSpace', 'down')"
+             @keydown.left.stop.prevent="$bus.$emit('moveSelectedSpace', 'left')"
+             @keydown.right.stop.prevent="$bus.$emit('moveSelectedSpace', 'right')"
+             v-model="letterInput"
         >
         <label for="hiddenInput"><canvas id="puzzle-canvas"></canvas></label>
     </div>
@@ -11,10 +16,10 @@
 
 export default {
     name: "puzzleViz",
-    props: ['board', 'inputDirection'],
+    props: ['board', 'wordStartIndices', 'inputDirection', 'selectedSpace'],
     data: function() {
         return {
-            selectedIndex: 3
+            letterInput: "",
         }
     },
     methods: {
@@ -47,21 +52,25 @@ export default {
                 var xpos = Math.round((i % dim) * spaceSize);
                 var ypos = Math.round(Math.floor(i / dim) * spaceSize);
 
+                // Fill black space
                 if (board.blacks.includes(i)) {
                     ctx.fillRect(xpos, ypos, spaceSize, spaceSize);
                 }
 
-                if (i == this.selectedIndex) {
+                // Fill selected space with blue
+                if (i == this.selectedSpace) {
                     ctx.fillStyle = "#65c6d7";
                     ctx.fillRect(xpos, ypos, spaceSize, spaceSize);
 
+                    // Fill black selected space specially
                     ctx.fillStyle = "black";
                     if (board.blacks.includes(i)) {
                         ctx.fillRect(xpos + 3, ypos + 3, spaceSize - 6, spaceSize - 6);
                     }
                 }
 
-                if (space.isSpecial == true && !space.isBlackSpace) {
+                // Draw special ring
+                if (board.special.includes(i) && !board.blacks.includes(i)) {
                     ctx.beginPath();
                     if (!space.isWordStart) {
                         ctx.arc(
@@ -85,9 +94,9 @@ export default {
                     ctx.stroke();
                 }
 
-                if (space.isWordStart == true) {
-                    ctx.font = "12px sans-serif";
-                    ctx.fillText(space.wordStartIndex, xpos + 2, ypos + 12, spaceSize);
+                if (this.wordStartIndices.includes(i)) {
+                    ctx.font = "24px sans-serif";
+                    ctx.fillText(this.wordStartIndices.indexOf(i), xpos + 2, ypos + 24, spaceSize);
                     ctx.font = "48px sans-serif";
                 }
 
@@ -112,13 +121,33 @@ export default {
     },
     created () {
         this.$bus.$on('updateCanvas', ($event) => {
-            console.log("Canvas updated");
             this.updateCanvas();
         });
 
         this.$bus.$on('resizeCanvas', ($event) => {
             this.resizeCanvas();
         });
+    },
+    watch: {
+        letterInput: function(newLetter) {
+			if (this.letterInput.length > 1) {
+				this.letterInput = this.letterInput.substring(1, 2);
+			} else if (this.letterInput.length === 1) {
+                var motionDirection = this.inputDirection === "across" ? "right" : "down";
+				if (newLetter === " ") {
+                    this.$bus.$emit('toggleBlackSpace');
+                    this.$bus.$emit('moveSelectedSpace', motionDirection);
+				} else if (newLetter === "`") {
+					this.$bus.$emit('toggleSpecialSpace');
+				} else if (newLetter.match(/[a-z]/i)) {
+					newLetter = newLetter.toUpperCase();
+                    this.$bus.$emit('setSpaceToLetter', newLetter);
+                    this.$bus.$emit('moveSelectedSpace', motionDirection);
+				}
+			}
+
+			this.updateCanvas();
+		}
     }
 }
 

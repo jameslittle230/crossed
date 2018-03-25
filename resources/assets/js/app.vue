@@ -9,14 +9,16 @@
                 :puzzleName.sync="ca_puzzle_name"
                 :inputDirection.sync="ca_input_direction"
             />
-            <word-column direction="across" :words="wordObjects['across']"/>
+            <word-column direction="across" :words="wordObjects['across']" style="border-right: 1px solid gray"/>
             <word-column direction="down"  :words="wordObjects['down']"/>
         </div>
 
         <div class="puzzle-visualization">
             <puzzle-viz
                 :board.sync="ca_board"
+                :wordStartIndices.sync="wordObjects['indices']"
                 :inputDirection.sync="ca_input_direction"
+                :selectedSpace.sync="ca_selected_space"
             />
             <word-suggestions/>
         </div>
@@ -40,7 +42,8 @@ import BottomBar from './components/BottomBar.vue'
 
 let data = {
 	ca_puzzle_name: "Zigs and Zags",
-	ca_input_direction: "across",
+    ca_input_direction: "across",
+    ca_selected_space: 0,
 
 	ca_user: {
 		name: "James Little",
@@ -65,7 +68,8 @@ let data = {
 		       "I", "N", "E", "E", "D", "Y", "O", "U", " ", "N", "E", "T", "H", "E", "R",
 		       "T", "C", "U", " ", "D", "E", "F", "T", " ", "O", "R", "I", "E", "N", "T",
                 "S", "E", "R", " ", "A", "R", "E", "S", " ", "M", "O", "S", "S", "E", "S"],
-        blacks: [6, 11, 21, 26, 36, 48, 64, 69, 70, 82, 86, 95, 96, 102, 103, 104, 105, 119, 120, 121, 122, 128, 129],
+        blacks: [6, 11, 21, 26, 36, 48, 64, 69, 70, 82, 86, 95, 96, 102, 103,
+            104, 105, 119, 120, 121, 122, 128, 129, 138, 142],
 		special: [5, 22, 129],
 	    clues: {
 		    across: [
@@ -97,8 +101,6 @@ export default {
 
             let board = this.ca_board;
 
-            /**@augments
-             */
             function beginningOfRow(index) {
                 return index % board.size === 0;
             }
@@ -127,7 +129,6 @@ export default {
                 var output = [];
                 var runner = index;
                 while(output.length < 40) { // safeguard against infinite loops
-                    console.log(endOfCol(index));
                     if(board.blacks.includes(runner) || endOfCol(runner) || endOfRow(runner)) {
                         return output.join('');
                     }
@@ -154,7 +155,7 @@ export default {
             /**
             Holds space indices that are word starts. If wordStartIndices =
             [0, 5, 9], then space 0 has word start number 1, space 5 has
-            word start number 5, and space 9 has word start number 3.
+            word start number 2, and space 9 has word start number 3.
             */
             var wordStartIndices = [];
             var acrossWordStartIndices = [];
@@ -186,10 +187,6 @@ export default {
                 }
             }
 
-            console.log("all", wordStartIndices);
-            console.log("across", acrossWordStartIndices);
-            console.log("down", downWordStartIndices);
-
             var idCount = 0;
             var across = [];
             var down = [];
@@ -204,6 +201,8 @@ export default {
                 idCount++;
             });
 
+            idCount = 0;
+
             downWordStartIndices.forEach(function(index) {
                 down.push({
                     id: idCount,
@@ -216,15 +215,106 @@ export default {
 
             return {
                 across: across,
-                down: down
+                down: down,
+                indices: wordStartIndices
             }
         }
     },
 
     created () {
-        this.$bus.$on('switchInputDirection', ($event) => {
+        this.$bus.$on('switchInputDirection', () => {
             this.ca_input_direction = this.ca_input_direction == "across" ? "down" : "across"
+        });
+
+        this.$bus.$on('updateClue', (index, direction, text) => {
+            this.ca_board.clues[direction][index] = text;
+            this.saveLocally();
+        });
+
+        this.$bus.$on('moveSelectedSpace', (direction) => {
+            if (direction === "up") {
+                let temp = this.ca_selected_space - this.ca_board.size
+                if(temp >= 0) { this.ca_selected_space = temp }
+            } else if (direction === "down") {
+                let temp = this.ca_selected_space + this.ca_board.size
+                if(temp <= this.ca_board.values.length - 1) { this.ca_selected_space = temp }
+            } else if (direction === "left") {
+                let temp = this.ca_selected_space - 1
+                if(temp >= 0) { this.ca_selected_space = temp }
+            } else if (direction === "right") {
+                let temp = this.ca_selected_space + 1
+                if(temp <= this.ca_board.values.length - 1) { this.ca_selected_space = temp }
+            }
+
+            // Not sure why the event emission has to be placed in a nextTick
+            // closure, but there is a one-event delay if this isn't set up
+            // like this. I should figure out why this is the case some day.
+            var theApp = this;
+            Vue.nextTick(function() {
+                theApp.$bus.$emit('updateCanvas');
+            });
+        });
+
+        this.$bus.$on('toggleBlackSpace', () => {
+            var blacks = this.ca_board.blacks;
+            var space = this.ca_selected_space;
+            var oppositeSpace = this.ca_board.values.length - space - 1
+            var index = blacks.indexOf(space);
+            var oppositeIndex = blacks.indexOf(oppositeSpace);
+
+            if (index === -1) {
+                blacks.push(space);
+                if (oppositeIndex === -1) {
+                    blacks.push(oppositeSpace);
+                }
+            } else {
+                blacks.splice(index, 1);
+                if(oppositeIndex !== -1) {
+                    oppositeIndex = blacks.indexOf(oppositeSpace);
+                    blacks.splice(oppositeIndex, 1);
+                }
+            }
+
+            this.saveLocally();
+        });
+
+        this.$bus.$on('toggleSpecialSpace', () => {
+            var special = this.ca_board.special;
+            var space = this.ca_selected_space;
+            var index = special.indexOf(space);
+
+            if (index === -1) {
+                special.push(space);
+            } else {
+                special.splice(index, 1);
+            }
+
+            this.saveLocally();
+        });
+
+        this.$bus.$on('setSpaceToLetter', (newLetter) => {
+            var space = this.ca_selected_space;
+            this.ca_board.values[space] = newLetter;
+            this.saveLocally();
         })
+
+        this.loadLocally();
+    },
+
+    methods: {
+        saveLocally: function() {
+            localStorage.setItem('board', JSON.stringify(this.ca_board));
+        },
+
+        loadLocally: function() {
+            if (localStorage.getItem('board') != null) {
+                this.ca_board = JSON.parse(localStorage.getItem('board'));
+            }
+        },
+
+        saveRemotely: function() {
+
+        }
     },
 
     ready: function () {

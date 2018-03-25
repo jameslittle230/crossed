@@ -109,8 +109,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 2 */,
-/* 3 */
+/* 2 */
 /***/ (function(module, exports) {
 
 /*
@@ -192,7 +191,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -413,6 +412,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
+/* 4 */,
 /* 5 */,
 /* 6 */,
 /* 7 */,
@@ -428,7 +428,7 @@ function applyToTag (styleElement, obj) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(17);
-module.exports = __webpack_require__(66);
+module.exports = __webpack_require__(70);
 
 
 /***/ }),
@@ -439,7 +439,7 @@ module.exports = __webpack_require__(66);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_vue__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__App_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_outside_events__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_outside_events__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_outside_events___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_outside_events__);
 window.Vue = __webpack_require__(6);
 
@@ -478,7 +478,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(24)
 /* template */
-var __vue_template__ = __webpack_require__(64)
+var __vue_template__ = __webpack_require__(68)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -527,7 +527,7 @@ var content = __webpack_require__(22);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("7a9ef29d", content, false);
+var update = __webpack_require__(3)("7a9ef29d", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -546,7 +546,7 @@ if(false) {
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -601,12 +601,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_PuzzleHeading_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_PuzzleHeading_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_WordColumn_vue__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_WordColumn_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_WordColumn_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_PuzzleViz_vue__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_PuzzleViz_vue__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_PuzzleViz_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_PuzzleViz_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_WordSuggestions_vue__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_WordSuggestions_vue__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_WordSuggestions_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_WordSuggestions_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_BottomBar_vue__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_BottomBar_vue__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_BottomBar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_BottomBar_vue__);
+//
+//
 //
 //
 //
@@ -650,6 +652,7 @@ Array.prototype.last = function () {
 var _data = {
     ca_puzzle_name: "Zigs and Zags",
     ca_input_direction: "across",
+    ca_selected_space: 0,
 
     ca_user: {
         name: "James Little",
@@ -660,7 +663,7 @@ var _data = {
         version: 1,
         size: 15,
         values: ["I", "C", "A", "R", "U", "S", " ", "F", "R", "E", "E", " ", "F", "A", "N", "T", "H", "R", "U", "S", "T", " ", "R", "A", "D", "S", " ", "A", "D", "O", "S", "I", "M", "M", "E", "R", " ", "O", "D", "C", "T", "O", "J", "O", "E", "O", "L", "Y", " ", "S", "A", "N", "D", "A", "N", "D", "M", "E", "R", "O", "P", "I", "M", "A", " ", "I", "N", "O", "R", " ", " ", "S", "T", "E", "M", "E", "D", "U", "C", "A", "T", "E", " ", "G", "I", "G", " ", "A", "D", "A", "N", "O", "L", "T", "E", " ", " ", "R", "U", "N", "I", "N", " ", " ", " ", " ", "G", "E", "O", "R", "G", "E", "A", "N", "D", "J", "O", "A", "N", " ", " ", " ", " ", "R", "I", "T", "A", "S", " ", " ", "O", "U", "T", "E", "R", "O", "P", "P", " ", "E", "O", "S", " ", "O", "P", "E", "N", "T", "O", "E", "R", "O", "O", "T", " ", " ", "E", "A", "C", "H", " ", "S", "A", "P", "S", "B", "U", "S", "H", "A", "N", "D", "B", "A", "E", "Z", " ", "C", "R", "O", "I", "N", "E", "E", "D", "Y", "O", "U", " ", "N", "E", "T", "H", "E", "R", "T", "C", "U", " ", "D", "E", "F", "T", " ", "O", "R", "I", "E", "N", "T", "S", "E", "R", " ", "A", "R", "E", "S", " ", "M", "O", "S", "S", "E", "S"],
-        blacks: [6, 11, 21, 26, 36, 48, 64, 69, 70, 82, 86, 95, 96, 102, 103, 104, 105, 119, 120, 121, 122, 128, 129],
+        blacks: [6, 11, 21, 26, 36, 48, 64, 69, 70, 82, 86, 95, 96, 102, 103, 104, 105, 119, 120, 121, 122, 128, 129, 138, 142],
         special: [5, 22, 129],
         clues: {
             across: ["Clue stuff goes here", "Another clue string", "Yadda yadda"],
@@ -684,8 +687,6 @@ var _data = {
 
             var board = this.ca_board;
 
-            /**@augments
-             */
             function beginningOfRow(index) {
                 return index % board.size === 0;
             }
@@ -715,7 +716,6 @@ var _data = {
                 var runner = index;
                 while (output.length < 40) {
                     // safeguard against infinite loops
-                    console.log(endOfCol(index));
                     if (board.blacks.includes(runner) || endOfCol(runner) || endOfRow(runner)) {
                         return output.join('');
                     }
@@ -742,7 +742,7 @@ var _data = {
             /**
             Holds space indices that are word starts. If wordStartIndices =
             [0, 5, 9], then space 0 has word start number 1, space 5 has
-            word start number 5, and space 9 has word start number 3.
+            word start number 2, and space 9 has word start number 3.
             */
             var wordStartIndices = [];
             var acrossWordStartIndices = [];
@@ -773,10 +773,6 @@ var _data = {
                 }
             }
 
-            console.log("all", wordStartIndices);
-            console.log("across", acrossWordStartIndices);
-            console.log("down", downWordStartIndices);
-
             var idCount = 0;
             var across = [];
             var down = [];
@@ -791,6 +787,8 @@ var _data = {
                 idCount++;
             });
 
+            idCount = 0;
+
             downWordStartIndices.forEach(function (index) {
                 down.push({
                     id: idCount,
@@ -803,7 +801,8 @@ var _data = {
 
             return {
                 across: across,
-                down: down
+                down: down,
+                indices: wordStartIndices
             };
         }
     },
@@ -811,11 +810,107 @@ var _data = {
     created: function created() {
         var _this = this;
 
-        this.$bus.$on('switchInputDirection', function ($event) {
+        this.$bus.$on('switchInputDirection', function () {
             _this.ca_input_direction = _this.ca_input_direction == "across" ? "down" : "across";
         });
+
+        this.$bus.$on('updateClue', function (index, direction, text) {
+            _this.ca_board.clues[direction][index] = text;
+            _this.saveLocally();
+        });
+
+        this.$bus.$on('moveSelectedSpace', function (direction) {
+            if (direction === "up") {
+                var temp = _this.ca_selected_space - _this.ca_board.size;
+                if (temp >= 0) {
+                    _this.ca_selected_space = temp;
+                }
+            } else if (direction === "down") {
+                var _temp = _this.ca_selected_space + _this.ca_board.size;
+                if (_temp <= _this.ca_board.values.length - 1) {
+                    _this.ca_selected_space = _temp;
+                }
+            } else if (direction === "left") {
+                var _temp2 = _this.ca_selected_space - 1;
+                if (_temp2 >= 0) {
+                    _this.ca_selected_space = _temp2;
+                }
+            } else if (direction === "right") {
+                var _temp3 = _this.ca_selected_space + 1;
+                if (_temp3 <= _this.ca_board.values.length - 1) {
+                    _this.ca_selected_space = _temp3;
+                }
+            }
+
+            // Not sure why the event emission has to be placed in a nextTick
+            // closure, but there is a one-event delay if this isn't set up
+            // like this. I should figure out why this is the case some day.
+            var theApp = _this;
+            Vue.nextTick(function () {
+                theApp.$bus.$emit('updateCanvas');
+            });
+        });
+
+        this.$bus.$on('toggleBlackSpace', function () {
+            var blacks = _this.ca_board.blacks;
+            var space = _this.ca_selected_space;
+            var oppositeSpace = _this.ca_board.values.length - space - 1;
+            var index = blacks.indexOf(space);
+            var oppositeIndex = blacks.indexOf(oppositeSpace);
+
+            if (index === -1) {
+                blacks.push(space);
+                if (oppositeIndex === -1) {
+                    blacks.push(oppositeSpace);
+                }
+            } else {
+                blacks.splice(index, 1);
+                if (oppositeIndex !== -1) {
+                    oppositeIndex = blacks.indexOf(oppositeSpace);
+                    blacks.splice(oppositeIndex, 1);
+                }
+            }
+
+            _this.saveLocally();
+        });
+
+        this.$bus.$on('toggleSpecialSpace', function () {
+            var special = _this.ca_board.special;
+            var space = _this.ca_selected_space;
+            var index = special.indexOf(space);
+
+            if (index === -1) {
+                special.push(space);
+            } else {
+                special.splice(index, 1);
+            }
+
+            _this.saveLocally();
+        });
+
+        this.$bus.$on('setSpaceToLetter', function (newLetter) {
+            var space = _this.ca_selected_space;
+            _this.ca_board.values[space] = newLetter;
+            _this.saveLocally();
+        });
+
+        this.loadLocally();
     },
 
+
+    methods: {
+        saveLocally: function saveLocally() {
+            localStorage.setItem('board', JSON.stringify(this.ca_board));
+        },
+
+        loadLocally: function loadLocally() {
+            if (localStorage.getItem('board') != null) {
+                this.ca_board = JSON.parse(localStorage.getItem('board'));
+            }
+        },
+
+        saveRemotely: function saveRemotely() {}
+    },
 
     ready: function ready() {
         window.addEventListener('resize', this.$bus.$emit('resizeCanvas'));
@@ -888,7 +983,7 @@ var content = __webpack_require__(27);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("9c003eea", content, false);
+var update = __webpack_require__(3)("9c003eea", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -907,7 +1002,7 @@ if(false) {
 /* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -1174,7 +1269,7 @@ var content = __webpack_require__(32);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("6bffefca", content, false);
+var update = __webpack_require__(3)("6bffefca", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1193,7 +1288,7 @@ if(false) {
 /* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -1386,7 +1481,7 @@ var content = __webpack_require__(36);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("816acba0", content, false);
+var update = __webpack_require__(3)("816acba0", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1405,7 +1500,7 @@ if(false) {
 /* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -1628,7 +1723,7 @@ var content = __webpack_require__(41);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("53b65d82", content, false);
+var update = __webpack_require__(3)("53b65d82", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1647,7 +1742,7 @@ if(false) {
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -1941,13 +2036,13 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(92)
+  __webpack_require__(46)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(46)
+var __vue_script__ = __webpack_require__(48)
 /* template */
-var __vue_template__ = __webpack_require__(94)
+var __vue_template__ = __webpack_require__(54)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1987,12 +2082,54 @@ module.exports = Component.exports
 
 /***/ }),
 /* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(47);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("678e1856", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-584b3712\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./WordColumn.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-584b3712\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./WordColumn.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Word_vue__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Word_vue__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Word_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Word_vue__);
+//
+//
 //
 //
 //
@@ -2026,19 +2163,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(95)
+  __webpack_require__(50)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(48)
+var __vue_script__ = __webpack_require__(52)
 /* template */
-var __vue_template__ = __webpack_require__(97)
+var __vue_template__ = __webpack_require__(53)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2077,7 +2214,47 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 48 */
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(51);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("94611cda", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29b05a7e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Word.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29b05a7e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Word.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.word[data-v-29b05a7e] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 8px;\n  border-bottom: 1px dotted gray;\n}\n.word-number[data-v-29b05a7e] {\n  font-weight: 900;\n  width: 40px;\n  margin-right: 18px;\n  font-size: 36px;\n  text-align: center;\n  letter-spacing: -0.2%;\n}\n.word-value[data-v-29b05a7e] {\n  font-weight: 700;\n  font-size: 20px;\n  color: #000000;\n  margin-bottom: 0.3em;\n}\n.word-clue[data-v-29b05a7e] {\n  font-family: \"Inter UI\";\n  width: 100%;\n  color: #333;\n  border: 1px solid transparent;\n}\n.word-clue[data-v-29b05a7e]:hover {\n    border: 1px solid gray;\n}\n.word-clue[data-v-29b05a7e]:focus {\n    border: 1px solid black;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2100,7 +2277,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "Word",
-    props: ['number', 'value', 'clue'],
+    props: ['id', 'direction', 'number', 'value', 'clue'],
     data: function data() {
         return {};
     },
@@ -2115,21 +2292,103 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 49 */,
-/* 50 */,
-/* 51 */
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "word" }, [
+    _c("div", { staticClass: "word-number" }, [_vm._v(_vm._s(_vm.number))]),
+    _vm._v(" "),
+    _c("div", { staticStyle: { width: "100%" } }, [
+      _c("div", { staticClass: "word-value" }, [
+        _vm._v(_vm._s(_vm.value) + " (" + _vm._s(_vm.id) + ")")
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "word-clue",
+        attrs: { type: "text", placeholder: "No clue yet" },
+        domProps: { value: _vm.clue },
+        on: {
+          blur: function($event) {
+            _vm.$bus.$emit(
+              "updateClue",
+              _vm.id,
+              _vm.direction,
+              $event.target.value
+            )
+          }
+        }
+      })
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-29b05a7e", module.exports)
+  }
+}
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "word-column" },
+    [
+      _c("header", [_vm._v(_vm._s(_vm.direction))]),
+      _vm._v(" "),
+      _vm._l(_vm.words, function(word) {
+        return _c("word", {
+          key: word.id,
+          attrs: {
+            id: word.id,
+            number: word.number,
+            direction: _vm.direction,
+            value: word.value,
+            clue: word.clue
+          }
+        })
+      })
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-584b3712", module.exports)
+  }
+}
+
+/***/ }),
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(52)
+  __webpack_require__(56)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(54)
+var __vue_script__ = __webpack_require__(58)
 /* template */
-var __vue_template__ = __webpack_require__(55)
+var __vue_template__ = __webpack_require__(59)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2168,17 +2427,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 52 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(53);
+var content = __webpack_require__(57);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("40500a3e", content, false);
+var update = __webpack_require__(3)("40500a3e", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2194,10 +2453,10 @@ if(false) {
 }
 
 /***/ }),
-/* 53 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -2208,7 +2467,7 @@ exports.push([module.i, "\ncanvas[data-v-e2a87b3c] {\n  width: 100%;\n  border: 
 
 
 /***/ }),
-/* 54 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2222,14 +2481,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "puzzleViz",
-    props: ['board', 'inputDirection'],
+    props: ['board', 'wordStartIndices', 'inputDirection', 'selectedSpace'],
     data: function data() {
         return {
-            selectedIndex: 3
+            letterInput: ""
         };
     },
     methods: {
@@ -2262,21 +2526,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 var xpos = Math.round(i % dim * spaceSize);
                 var ypos = Math.round(Math.floor(i / dim) * spaceSize);
 
+                // Fill black space
                 if (board.blacks.includes(i)) {
                     ctx.fillRect(xpos, ypos, spaceSize, spaceSize);
                 }
 
-                if (i == this.selectedIndex) {
+                // Fill selected space with blue
+                if (i == this.selectedSpace) {
                     ctx.fillStyle = "#65c6d7";
                     ctx.fillRect(xpos, ypos, spaceSize, spaceSize);
 
+                    // Fill black selected space specially
                     ctx.fillStyle = "black";
                     if (board.blacks.includes(i)) {
                         ctx.fillRect(xpos + 3, ypos + 3, spaceSize - 6, spaceSize - 6);
                     }
                 }
 
-                if (space.isSpecial == true && !space.isBlackSpace) {
+                // Draw special ring
+                if (board.special.includes(i) && !board.blacks.includes(i)) {
                     ctx.beginPath();
                     if (!space.isWordStart) {
                         ctx.arc(xpos + spaceSize / 2, ypos + spaceSize / 2, spaceSize / 2, 0, 2 * Math.PI, false);
@@ -2286,9 +2554,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     ctx.stroke();
                 }
 
-                if (space.isWordStart == true) {
-                    ctx.font = "12px sans-serif";
-                    ctx.fillText(space.wordStartIndex, xpos + 2, ypos + 12, spaceSize);
+                if (this.wordStartIndices.includes(i)) {
+                    ctx.font = "24px sans-serif";
+                    ctx.fillText(this.wordStartIndices.indexOf(i), xpos + 2, ypos + 24, spaceSize);
                     ctx.font = "48px sans-serif";
                 }
 
@@ -2310,18 +2578,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         this.$bus.$on('updateCanvas', function ($event) {
-            console.log("Canvas updated");
             _this.updateCanvas();
         });
 
         this.$bus.$on('resizeCanvas', function ($event) {
             _this.resizeCanvas();
         });
+    },
+
+    watch: {
+        letterInput: function letterInput(newLetter) {
+            if (this.letterInput.length > 1) {
+                this.letterInput = this.letterInput.substring(1, 2);
+            } else if (this.letterInput.length === 1) {
+                var motionDirection = this.inputDirection === "across" ? "right" : "down";
+                if (newLetter === " ") {
+                    this.$bus.$emit('toggleBlackSpace');
+                    this.$bus.$emit('moveSelectedSpace', motionDirection);
+                } else if (newLetter === "`") {
+                    this.$bus.$emit('toggleSpecialSpace');
+                } else if (newLetter.match(/[a-z]/i)) {
+                    newLetter = newLetter.toUpperCase();
+                    this.$bus.$emit('setSpaceToLetter', newLetter);
+                    this.$bus.$emit('moveSelectedSpace', motionDirection);
+                }
+            }
+
+            this.updateCanvas();
+        }
     }
 });
 
 /***/ }),
-/* 55 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2330,19 +2619,86 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "puzzle-viz" }, [
     _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.letterInput,
+          expression: "letterInput"
+        }
+      ],
       staticClass: "hidden-input",
       attrs: { type: "text", id: "hiddenInput", autofocus: "" },
+      domProps: { value: _vm.letterInput },
       on: {
-        keydown: function($event) {
-          if (
-            !("button" in $event) &&
-            _vm._k($event.keyCode, "tab", 9, $event.key)
-          ) {
-            return null
+        keydown: [
+          function($event) {
+            if (
+              !("button" in $event) &&
+              _vm._k($event.keyCode, "tab", 9, $event.key)
+            ) {
+              return null
+            }
+            $event.stopPropagation()
+            $event.preventDefault()
+            _vm.$bus.$emit("switchInputDirection")
+          },
+          function($event) {
+            if (
+              !("button" in $event) &&
+              _vm._k($event.keyCode, "up", 38, $event.key)
+            ) {
+              return null
+            }
+            $event.stopPropagation()
+            $event.preventDefault()
+            _vm.$bus.$emit("moveSelectedSpace", "up")
+          },
+          function($event) {
+            if (
+              !("button" in $event) &&
+              _vm._k($event.keyCode, "down", 40, $event.key)
+            ) {
+              return null
+            }
+            $event.stopPropagation()
+            $event.preventDefault()
+            _vm.$bus.$emit("moveSelectedSpace", "down")
+          },
+          function($event) {
+            if (
+              !("button" in $event) &&
+              _vm._k($event.keyCode, "left", 37, $event.key)
+            ) {
+              return null
+            }
+            if ("button" in $event && $event.button !== 0) {
+              return null
+            }
+            $event.stopPropagation()
+            $event.preventDefault()
+            _vm.$bus.$emit("moveSelectedSpace", "left")
+          },
+          function($event) {
+            if (
+              !("button" in $event) &&
+              _vm._k($event.keyCode, "right", 39, $event.key)
+            ) {
+              return null
+            }
+            if ("button" in $event && $event.button !== 2) {
+              return null
+            }
+            $event.stopPropagation()
+            $event.preventDefault()
+            _vm.$bus.$emit("moveSelectedSpace", "right")
           }
-          $event.stopPropagation()
-          $event.preventDefault()
-          _vm.$bus.$emit("switchInputDirection")
+        ],
+        input: function($event) {
+          if ($event.target.composing) {
+            return
+          }
+          _vm.letterInput = $event.target.value
         }
       }
     }),
@@ -2370,15 +2726,15 @@ if (false) {
 }
 
 /***/ }),
-/* 56 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(57)
+var __vue_script__ = __webpack_require__(61)
 /* template */
-var __vue_template__ = __webpack_require__(58)
+var __vue_template__ = __webpack_require__(62)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2417,7 +2773,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 57 */
+/* 61 */
 /***/ (function(module, exports) {
 
 //
@@ -2428,7 +2784,7 @@ module.exports = Component.exports
 //
 
 /***/ }),
-/* 58 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2457,19 +2813,19 @@ if (false) {
 }
 
 /***/ }),
-/* 59 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(60)
+  __webpack_require__(64)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(62)
+var __vue_script__ = __webpack_require__(66)
 /* template */
-var __vue_template__ = __webpack_require__(63)
+var __vue_template__ = __webpack_require__(67)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2508,17 +2864,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 60 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(61);
+var content = __webpack_require__(65);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("242b4b66", content, false);
+var update = __webpack_require__(3)("242b4b66", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2534,10 +2890,10 @@ if(false) {
 }
 
 /***/ }),
-/* 61 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -2548,7 +2904,7 @@ exports.push([module.i, "\n.bottom-bar__button {\n  background: rgba(0, 0, 0, 0.
 
 
 /***/ }),
-/* 62 */
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2581,7 +2937,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 63 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2662,7 +3018,7 @@ if (false) {
 }
 
 /***/ }),
-/* 64 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2695,6 +3051,7 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("word-column", {
+            staticStyle: { "border-right": "1px solid gray" },
             attrs: { direction: "across", words: _vm.wordObjects["across"] }
           }),
           _vm._v(" "),
@@ -2712,14 +3069,22 @@ var render = function() {
           _c("puzzle-viz", {
             attrs: {
               board: _vm.ca_board,
-              inputDirection: _vm.ca_input_direction
+              wordStartIndices: _vm.wordObjects["indices"],
+              inputDirection: _vm.ca_input_direction,
+              selectedSpace: _vm.ca_selected_space
             },
             on: {
               "update:board": function($event) {
                 _vm.ca_board = $event
               },
+              "update:wordStartIndices": function($event) {
+                _vm.$set(_vm.wordObjects, "indices", $event)
+              },
               "update:inputDirection": function($event) {
                 _vm.ca_input_direction = $event
+              },
+              "update:selectedSpace": function($event) {
+                _vm.ca_selected_space = $event
               }
             }
           }),
@@ -2745,7 +3110,7 @@ if (false) {
 }
 
 /***/ }),
-/* 65 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_$, __webpack_provided_window_dot_jQuery, jQuery) {/**
@@ -2758,189 +3123,13 @@ if (false) {
  */
 !function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define("vue-outside-events",t):e["vue-outside-events"]=t()}(this,function(){"use strict";var e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},t=function(t,i){var n={};return n.directiveName=t,n.eventName=i,n.bind=function(n,o,u){var d=void 0!==console.error?console.error:console.log,r=null,v=void 0;if("function"!=typeof o.value)if("object"===e(o.value)&&o.value.hasOwnProperty("handler")&&"function"==typeof o.value.handler)r=o.value.handler,v=Object.assign({},o.value),delete v.handler;else{var c="["+t+"]: provided expression '"+o.expression+"' must be a function or an object containing a property named 'handler' that is a function.";u.context.name&&(c+="\nFound in component '"+u.context.name+"'"),d(c)}else r=o.value;var a=function(e){n.contains(e.target)||n===e.target||r(e,n,v)};n.__vueEventOutside__=a,document.addEventListener(i,a)},n.unbind=function(e,t){document.removeEventListener(i,e.__vueEventOutside__),e.__vueEventOutside__=null},n},i={directiveName:"event-outside",bind:function(t,i,n){var o=void 0!==console.error?console.error:console.log,u=void 0;if("object"!==e(i.value)||void 0===i.value.name||"string"!=typeof i.value.name||void 0===i.value.handler||"function"!=typeof i.value.handler){var d="[v-event-outside]: provided expression '"+i.expression+'\' must be an object containing a "name" string and a "handler" function.';return n.context.name&&(d+="\nFound in component '"+n.context.name+"'"),void o(d)}if(u=Object.assign({},i.value),delete u.name,delete u.handler,i.modifiers.jquery&&void 0===__webpack_provided_window_dot_$&&void 0===__webpack_provided_window_dot_jQuery){var r="[v-event-outside]: jQuery is not present in window.";return n.context.name&&(r+="\nFound in component '"+n.context.name+"'"),void o(r)}var v=function(e){t.contains(e.target)||t===e.target||i.value.handler(e,t,u)};t.__vueEventOutside__=v,i.modifiers.jquery?jQuery(document).on(i.value.name,v):document.addEventListener(i.value.name,v)},unbind:function(e,t){t.modifiers.jquery?jQuery(document).off(t.value.name,e.__vueEventOutside__):document.removeEventListener(t.value.name,e.__vueEventOutside__),e.__vueEventOutside__=null}},n=t("click-outside","click"),o=t("dblclick-outside","dblclick"),u=t("focus-outside","focusin"),d=t("blur-outside","focusout"),r=t("mousemove-outside","mousemove"),v=t("mousedown-outside","mousedown"),c=t("mouseup-outside","mouseup"),a=t("mouseover-outside","mouseover"),s=t("mouseout-outside","mouseout"),m=t("change-outside","change"),l=t("select-outside","select"),f=t("submit-outside","submit"),p=t("keydown-outside","keydown"),y=t("keypress-outside","keypress"),_=t("keyup-outside","keyup"),b={install:function(e){e.directive(n.directiveName,n),e.directive(o.directiveName,o),e.directive(u.directiveName,u),e.directive(d.directiveName,d),e.directive(r.directiveName,r),e.directive(v.directiveName,v),e.directive(c.directiveName,c),e.directive(a.directiveName,a),e.directive(s.directiveName,s),e.directive(m.directiveName,m),e.directive(l.directiveName,l),e.directive(f.directiveName,f),e.directive(p.directiveName,p),e.directive(y.directiveName,y),e.directive(y.directiveName,y),e.directive(_.directiveName,_),e.directive(i.directiveName,i)}};return"undefined"!=typeof window&&window.Vue&&window.Vue.use(b),b});
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(2), __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(4), __webpack_require__(4)))
 
 /***/ }),
-/* 66 */
+/* 70 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(93);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(4)("678e1856", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-584b3712\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./WordColumn.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-584b3712\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./WordColumn.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 93 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-/* 94 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "word-column" },
-    [
-      _c("header", [_vm._v(_vm._s(_vm.direction))]),
-      _vm._v(" "),
-      _vm._l(_vm.words, function(word) {
-        return _c("word", {
-          key: word.id,
-          attrs: { number: word.number, value: word.value, clue: word.clue }
-        })
-      })
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-584b3712", module.exports)
-  }
-}
-
-/***/ }),
-/* 95 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(96);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(4)("94611cda", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29b05a7e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Word.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29b05a7e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Word.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 96 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.word[data-v-29b05a7e] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 8px;\n  border-bottom: 1px dotted gray;\n}\n.word-number[data-v-29b05a7e] {\n  font-weight: 900;\n  width: 40px;\n  margin-right: 18px;\n  font-size: 36px;\n  text-align: center;\n  letter-spacing: -0.2%;\n}\n.word-value[data-v-29b05a7e] {\n  font-weight: 700;\n  font-size: 20px;\n  color: #000000;\n  margin-bottom: 0.3em;\n}\n.word-clue[data-v-29b05a7e] {\n  font-family: \"Inter UI\";\n  width: 100%;\n  color: #333;\n  border: 1px solid transparent;\n}\n.word-clue[data-v-29b05a7e]:hover {\n    border: 1px solid gray;\n}\n.word-clue[data-v-29b05a7e]:focus {\n    border: 1px solid black;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 97 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "word" }, [
-    _c("div", { staticClass: "word-number" }, [_vm._v(_vm._s(_vm.number))]),
-    _vm._v(" "),
-    _c("div", [
-      _c("div", { staticClass: "word-value" }, [_vm._v(_vm._s(_vm.value))]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "word-clue",
-        attrs: { type: "text", placeholder: "No clue yet" },
-        domProps: { value: _vm.clue },
-        on: {
-          blur: function($event) {
-            _vm.$emit("update:clue", $event.target.value)
-          }
-        }
-      })
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-29b05a7e", module.exports)
-  }
-}
 
 /***/ })
 ],[16]);
