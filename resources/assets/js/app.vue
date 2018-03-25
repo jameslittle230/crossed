@@ -234,6 +234,11 @@ export default {
     created () {
         this.$bus.$on('switchInputDirection', () => {
             this.ca_input_direction = this.ca_input_direction == "across" ? "down" : "across"
+
+            var theApp = this;
+            Vue.nextTick(function() {
+                theApp.$bus.$emit('updateCanvas');
+            });
         });
 
         this.$bus.$on('updateClue', (index, direction, text) => {
@@ -306,7 +311,16 @@ export default {
             var space = this.ca_selected_space;
             this.ca_board.values[space] = newLetter;
             this.saveLocally();
-        })
+        });
+
+        this.$bus.$on('selectSpace', (index) => {
+            this.ca_selected_space = index;
+
+            var theApp = this;
+            Vue.nextTick(function() {
+                theApp.$bus.$emit('updateCanvas');
+            });
+        });
 
         this.loadLocally();
     },

@@ -818,6 +818,11 @@ var _data = {
 
         this.$bus.$on('switchInputDirection', function () {
             _this.ca_input_direction = _this.ca_input_direction == "across" ? "down" : "across";
+
+            var theApp = _this;
+            Vue.nextTick(function () {
+                theApp.$bus.$emit('updateCanvas');
+            });
         });
 
         this.$bus.$on('updateClue', function (index, direction, text) {
@@ -898,6 +903,15 @@ var _data = {
             var space = _this.ca_selected_space;
             _this.ca_board.values[space] = newLetter;
             _this.saveLocally();
+        });
+
+        this.$bus.$on('selectSpace', function (index) {
+            _this.ca_selected_space = index;
+
+            var theApp = _this;
+            Vue.nextTick(function () {
+                theApp.$bus.$emit('updateCanvas');
+            });
         });
 
         this.loadLocally();
@@ -2467,7 +2481,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\ncanvas[data-v-e2a87b3c] {\n  width: 100%;\n  border: 1px solid black;\n}\n.hidden-input[data-v-e2a87b3c] {\n  position: absolute;\n  opacity: 0;\n  cursor: default;\n}\n", ""]);
+exports.push([module.i, "\ncanvas[data-v-e2a87b3c] {\n  width: 100%;\n  border: 1px solid black;\n}\n.hidden-input[data-v-e2a87b3c] {\n  position: absolute;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  width: 1px;\n  margin: -1px;\n  padding: 0;\n  border: 0;\n  cursor: default;\n}\n", ""]);
 
 // exports
 
@@ -2478,6 +2492,10 @@ exports.push([module.i, "\ncanvas[data-v-e2a87b3c] {\n  width: 100%;\n  border: 
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
 //
 //
 //
@@ -2536,11 +2554,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (board.blacks.includes(i)) {
                     ctx.fillRect(xpos, ypos, spaceSize, spaceSize);
                 }
+            }
+
+            for (var i = 0; i < board.values.length; i++) {
+                var space = board.values[i];
+                var xpos = Math.round(i % dim * spaceSize);
+                var ypos = Math.round(Math.floor(i / dim) * spaceSize);
 
                 // Fill selected space with blue
                 if (i == this.selectedSpace) {
                     ctx.fillStyle = "#65c6d7";
                     ctx.fillRect(xpos, ypos, spaceSize, spaceSize);
+
+                    ctx.beginPath();
+                    if (this.inputDirection === "across") {
+                        ctx.moveTo(xpos + spaceSize, ypos);
+                        ctx.lineTo(xpos + spaceSize + 24, ypos + spaceSize / 2);
+                        ctx.lineTo(xpos + spaceSize, ypos + spaceSize);
+                        ctx.fill();
+                    } else {
+                        ctx.moveTo(xpos, ypos + spaceSize);
+                        ctx.lineTo(xpos + spaceSize / 2, ypos + spaceSize + 24);
+                        ctx.lineTo(xpos + spaceSize, ypos + spaceSize);
+                        ctx.fill();
+                    }
+                    ctx.closePath();
 
                     // Fill black selected space specially
                     ctx.fillStyle = "black";
@@ -2575,6 +2613,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var canvas = document.getElementById('puzzle-canvas');
             canvas.height = canvas.width;
             this.updateCanvas();
+        },
+
+        selectSpaceFromClick: function selectSpaceFromClick() {
+            var canvas = document.getElementById("puzzle-canvas");
+            var x = event.clientX - canvas.getBoundingClientRect().left;
+            var y = event.clientY - canvas.getBoundingClientRect().top;
+
+            var xSpace = Math.floor(x / canvas.getBoundingClientRect().width * this.board.size);
+            var ySpace = Math.floor(y / canvas.getBoundingClientRect().height * this.board.size);
+
+            var spaceID = ySpace * this.board.size + xSpace;
+            if (spaceID === this.selectedSpace) {
+                this.$bus.$emit('switchInputDirection');
+            }
+
+            this.$bus.$emit('selectSpace', spaceID);
         }
     },
     mounted: function mounted() {
@@ -2709,19 +2763,19 @@ var render = function() {
       }
     }),
     _vm._v(" "),
-    _vm._m(0)
+    _c("label", { attrs: { for: "hiddenInput" } }, [
+      _c("canvas", {
+        attrs: { id: "puzzle-canvas" },
+        on: {
+          click: function($event) {
+            _vm.selectSpaceFromClick($event)
+          }
+        }
+      })
+    ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { attrs: { for: "hiddenInput" } }, [
-      _c("canvas", { attrs: { id: "puzzle-canvas" } })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
